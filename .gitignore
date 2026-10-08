@@ -1,0 +1,31 @@
+# Dependency directories
+node_modules/
+*/node_modules/
+
+# Production build
+dist/
+*/dist/
+
+# SQLite database
+*.db
+*.db-journal
+*.sqlite
+backend/finance.db
+
+# Environment variables
+.env
+.env.local
+backend/.env
+frontend/.env
+!backend/.env.example
+!frontend/.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
