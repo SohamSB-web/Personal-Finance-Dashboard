@@ -12,6 +12,17 @@ const {
   getBudgetsByUserId,
 } = require('./db');
 
+// Global safety handlers
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+});
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled Rejection:', reason);
+});
+process.on('exit', (code) => {
+  console.log(`Server exiting with code: ${code}`);
+});
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'personal_finance_secret_key_2025';
